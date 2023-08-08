@@ -11,6 +11,10 @@ class MemoTableViewController: UITableViewController, UISearchBarDelegate {
     }
     var memo: Memo?
     
+    let sections = ["iCloud","중요한 메모"]
+    
+    var importantMemo: [String] = []
+    
     var index = 0
     
     let formatter: DateFormatter = {
@@ -66,14 +70,36 @@ class MemoTableViewController: UITableViewController, UISearchBarDelegate {
             memoTableView.isHidden = false
         }
         
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressCalled(_:)))
+        memoTableView.addGestureRecognizer(longPressGesture)
+        
         //observer 추가
         NotificationCenter.default.addObserver(forName: NewMemoController.newMemoInsert, object: nil, queue: OperationQueue.main, using: {[weak self] (noti) in self?.tableView.reloadData()})
-//        override func viewWillAppear(_ animated: Bool) { // 화면이 새롭게 그려질 때마다 호출됨
-//        myTableView.reloadData()
-//        self.toolbarItems = makeToolbarItems()
-//        dataManager.setData()
-//        print("Page2viewWillAppear")
-//        }
+    }
+    
+    // longPress 제스처가 시작되었을 때만 코드 실행
+    @objc func longPressCalled(_ longPress: UILongPressGestureRecognizer){
+        print("longPress called")
+        
+        let indexInCell = longPress.location(in: memoTableView)
+        let indexPath = memoTableView.indexPathForRow(at: indexInCell)
+        
+        if longPress.state == .began {
+            let alertController = UIAlertController(title: "중요한 메모를 추가하시겠습니까?", message: "", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+                if let indexPath = indexPath {
+                    let memoContent = DataManager.shared.memoList[indexPath.row].content ?? ""
+                    self.importantMemo.append(memoContent)
+                    self.memoTableView.reloadData()
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -87,7 +113,14 @@ class MemoTableViewController: UITableViewController, UISearchBarDelegate {
         }
         tableView.reloadData()
     }
-
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
@@ -97,7 +130,7 @@ class MemoTableViewController: UITableViewController, UISearchBarDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
+    
     func setupToolBar(){
         navigationController?.isToolbarHidden = false
         self.navigationController?.toolbar.tintColor = UIColor.orange
@@ -138,8 +171,11 @@ class MemoTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return DataManager.shared.memoList.count
+        if section == 0 {
+            return DataManager.shared.memoList.count
+        } else {
+            return importantMemo.count
+        }
     }
     
     
@@ -156,6 +192,5 @@ class MemoTableViewController: UITableViewController, UISearchBarDelegate {
             .date)
         
         return cell
-    }
-  
+    }    
 }
