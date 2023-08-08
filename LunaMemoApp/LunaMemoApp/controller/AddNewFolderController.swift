@@ -10,21 +10,13 @@ class AddNewFolderController: UITableViewController {
         guard let folderName = FolderNameTextField.text, !folderName.isEmpty else {
             return
         }
-        
-        print("Folder name: \(folderName)")
+
         let newFolder = Folder(content: folderName)
         Folder.dummyFolderList.append(newFolder)
         
         NotificationCenter.default.post(name: AddNewFolderController.newFolderInsert, object: nil)
         dismiss(animated: true, completion: nil)
     }
-    
-    private let FolderNameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "폴더명을 입력해주세요."
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +35,12 @@ class AddNewFolderController: UITableViewController {
             FolderNameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-
+    
+    private let FolderNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "폴더명을 입력해주세요."
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
 }
 
-extension AddNewFolderController {
-    static let newFolderInsert = Notification.Name(rawValue: "new Folder")
-}
