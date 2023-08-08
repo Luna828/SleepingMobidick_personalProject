@@ -1,22 +1,12 @@
-//
-//  NewMemoController.swift
-//  LunaMemoApp
-//
-//  Created by t2023-m0050 on 2023/08/02.
-//
-
 import UIKit
 
 class NewMemoController: UIViewController {
     
     var editMemo: Memo?
-    
-    @IBOutlet weak var memoTextView: UITextView!
-    
     var initialMemoText: String?
     var isEditingMemo = false
     
-    
+    @IBOutlet weak var memoTextView: UITextView!
     @IBAction func saveBtn(_ sender: Any) {
         
         guard let memo = memoTextView.text,
@@ -24,9 +14,7 @@ class NewMemoController: UIViewController {
             alert(message: "메모를 입력하세요")
             return
         }
-        
-//        let newMemo = Memo(content: memo, date: Date())
-//        Memo.dummyMemoList.append(newMemo)
+
         if let target = editMemo {
             target.content = memo
             DataManager.shared.saveContext()

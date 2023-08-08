@@ -38,27 +38,6 @@ class FolderTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
 
-    func setupToolBarButtonFolder() {
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let addFolder = UIBarButtonItem(title: "", image: UIImage(systemName: "folder.badge.plus"), target: self,action: #selector(addNewFolderBtn))
-        let addMemo = UIBarButtonItem(title: "", image: UIImage(systemName: "square.and.pencil"), target: self, action: #selector(addNewMemoBtn))
-        
-        let barItems = [addFolder, flexibleSpace, flexibleSpace, flexibleSpace, addMemo]
-        self.toolbarItems = barItems
-    }
-    
-    //새 폴더 segue (modal 형식)
-    @objc func addNewFolderBtn(_ sender: Any?){
-//        let addNewFolderController = AddNewFolderController()
-//            self.present(addNewFolderController, animated: true, completion: nil)
-        performSegue(withIdentifier: "addFolder", sender: nil)
-    }
-    
-    //새 메모로 가는 segue
-    @objc func addNewMemoBtnFolder(_ sender: Any?){
-        performSegue(withIdentifier: "addNewMemo", sender: nil)
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "memoPage", sender: nil)
     }

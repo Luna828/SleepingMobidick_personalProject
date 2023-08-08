@@ -26,6 +26,7 @@
 		FBC776912A82320800411396 /* toolBarItem_memoTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */; };
 		FBC776932A82341000411396 /* moveToImportantMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776922A82341000411396 /* moveToImportantMemo.swift */; };
 		FBC776952A8239C400411396 /* memoTableView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776942A8239C400411396 /* memoTableView_extension.swift */; };
+		FBC776972A82406000411396 /* showMemoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776962A82406000411396 /* showMemoExtension.swift */; };
 		FBE08C072A7B4D9D0044A8C7 /* AddNewFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */; };
 		FBE08C0A2A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C082A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld */; };
 		FBE08C112A7BC9B90044A8C7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C102A7BC9B90044A8C7 /* DataManager.swift */; };
@@ -58,6 +59,7 @@
 		FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolBarItem_memoTableVC.swift; sourceTree = "<group>"; };
 		FBC776922A82341000411396 /* moveToImportantMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moveToImportantMemo.swift; sourceTree = "<group>"; };
 		FBC776942A8239C400411396 /* memoTableView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoTableView_extension.swift; sourceTree = "<group>"; };
+		FBC776962A82406000411396 /* showMemoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showMemoExtension.swift; sourceTree = "<group>"; };
 		FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFolderController.swift; sourceTree = "<group>"; };
 		FBE08C092A7BC3CA0044A8C7 /* LunaMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LunaMemo.xcdatamodel; sourceTree = "<group>"; };
 		FBE08C0B2A7BC7B60044A8C7 /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		FB900E182A789D1D00148681 /* LunaMemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBC7768A2A82213E00411396 /* Extension */,
 				FBC7768D2A82306A00411396 /* items */,
 				FBE08C0F2A7BC9A30044A8C7 /* data */,
 				FBE08C0D2A7BC7B60044A8C7 /* memoListItem */,
@@ -149,8 +152,12 @@
 		FBC7768A2A82213E00411396 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FBC776922A82341000411396 /* moveToImportantMemo.swift */,
+				FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */,
+				FBC776942A8239C400411396 /* memoTableView_extension.swift */,
 				FB09F0972A79EE7E00935D08 /* NewMemoController+Alert.swift */,
 				FBC7768B2A822A4800411396 /* TableViewExtension.swift */,
+				FBC776962A82406000411396 /* showMemoExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -159,9 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				FBC7768E2A8230A600411396 /* dateFormatter.swift */,
-				FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */,
-				FBC776922A82341000411396 /* moveToImportantMemo.swift */,
-				FBC776942A8239C400411396 /* memoTableView_extension.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -182,7 +186,6 @@
 				FB900E302A78C31000148681 /* FolderTableViewController.swift */,
 				FBF358842A78E84700E037A3 /* MemoTableViewController.swift */,
 				FB09F0952A79E99D00935D08 /* NewMemoController.swift */,
-				FBC7768A2A82213E00411396 /* Extension */,
 				FB09F0992A7A159E00935D08 /* showMemoController.swift */,
 				FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */,
 				FBA122B12A7F736F00D101B7 /* showMemoCollectionViewController.swift */,
@@ -329,6 +332,7 @@
 				FB900E1A2A789D1D00148681 /* AppDelegate.swift in Sources */,
 				FB900E1C2A789D1D00148681 /* SceneDelegate.swift in Sources */,
 				FBC776912A82320800411396 /* toolBarItem_memoTableVC.swift in Sources */,
+				FBC776972A82406000411396 /* showMemoExtension.swift in Sources */,
 				FB900E312A78C31000148681 /* FolderTableViewController.swift in Sources */,
 				FBC7768F2A8230A600411396 /* dateFormatter.swift in Sources */,
 				FB09F0962A79E99D00935D08 /* NewMemoController.swift in Sources */,
