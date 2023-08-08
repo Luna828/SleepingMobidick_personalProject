@@ -14,6 +14,9 @@
 		FBC776B12A8283F800411396 /* API_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBC776AF2A8283F800411396 /* API_Project.xcdatamodeld */; };
 		FBC776B32A8283F900411396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC776B22A8283F900411396 /* Assets.xcassets */; };
 		FBC776B62A8283F900411396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC776B42A8283F900411396 /* LaunchScreen.storyboard */; };
+		FBC776C02A82933700411396 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776BE2A82933700411396 /* FeedCollectionViewCell.swift */; };
+		FBC776C12A82933700411396 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC776BF2A82933700411396 /* FeedCollectionViewCell.xib */; };
+		FBC776C42A829A1600411396 /* ImageFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776C32A829A1600411396 /* ImageFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		FBC776B22A8283F900411396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBC776B52A8283F900411396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBC776B72A8283F900411396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC776BE2A82933700411396 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBC776BF2A82933700411396 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBC776C32A829A1600411396 /* ImageFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		FBC776A52A8283F800411396 /* API_Project */ = {
 			isa = PBXGroup;
 			children = (
+				FBC776C22A82933E00411396 /* ImageFeed */,
 				FBC776A62A8283F800411396 /* AppDelegate.swift */,
 				FBC776A82A8283F800411396 /* SceneDelegate.swift */,
 				FBC776AA2A8283F800411396 /* ViewController.swift */,
@@ -68,6 +75,24 @@
 				FBC776AF2A8283F800411396 /* API_Project.xcdatamodeld */,
 			);
 			path = API_Project;
+			sourceTree = "<group>";
+		};
+		FBC776BD2A8292A700411396 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBC776BE2A82933700411396 /* FeedCollectionViewCell.swift */,
+				FBC776BF2A82933700411396 /* FeedCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FBC776C22A82933E00411396 /* ImageFeed */ = {
+			isa = PBXGroup;
+			children = (
+				FBC776BD2A8292A700411396 /* Cell */,
+				FBC776C32A829A1600411396 /* ImageFeedViewController.swift */,
+			);
+			path = ImageFeed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +155,7 @@
 			files = (
 				FBC776B62A8283F900411396 /* LaunchScreen.storyboard in Resources */,
 				FBC776B32A8283F900411396 /* Assets.xcassets in Resources */,
+				FBC776C12A82933700411396 /* FeedCollectionViewCell.xib in Resources */,
 				FBC776AE2A8283F800411396 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC776C42A829A1600411396 /* ImageFeedViewController.swift in Sources */,
 				FBC776B12A8283F800411396 /* API_Project.xcdatamodeld in Sources */,
 				FBC776AB2A8283F800411396 /* ViewController.swift in Sources */,
+				FBC776C02A82933700411396 /* FeedCollectionViewCell.swift in Sources */,
 				FBC776A72A8283F800411396 /* AppDelegate.swift in Sources */,
 				FBC776A92A8283F800411396 /* SceneDelegate.swift in Sources */,
 			);
