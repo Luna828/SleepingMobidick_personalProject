@@ -4,6 +4,14 @@ class FolderTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet var folderTableView: UITableView!
     
+    var token: NSObjectProtocol?
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,9 +25,8 @@ class FolderTableViewController: UITableViewController, UISearchBarDelegate {
         } else {
             folderTableView.isHidden = false
         }
-        
         self.setupToolBar()
-        self.setupToolBarButton()
+        self.setupToolBarButtonFolder()
         
         NotificationCenter.default.addObserver(forName: AddNewFolderController.newFolderInsert, object: nil, queue: OperationQueue.main, using: {[weak self] (noti) in self?.tableView.reloadData()})
     }
@@ -30,28 +37,8 @@ class FolderTableViewController: UITableViewController, UISearchBarDelegate {
         DataManager.shared.fetchMemo()
         tableView.reloadData()
     }
-    
-    var token: NSObjectProtocol?
-    
-    deinit {
-        if let token = token {
-            NotificationCenter.default.removeObserver(token)
-        }
-    }
 
-    //toolBar 생성
-    func setupToolBar(){
-        navigationController?.isToolbarHidden = false
-        self.navigationController?.toolbar.tintColor = UIColor.orange
-    }
-    
-    func setupAppearance(){
-        let appearance = UIToolbarAppearance()
-        appearance.configureWithOpaqueBackground()
-        navigationController?.toolbar.scrollEdgeAppearance = appearance
-    }
-    
-    func setupToolBarButton() {
+    func setupToolBarButtonFolder() {
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let addFolder = UIBarButtonItem(title: "", image: UIImage(systemName: "folder.badge.plus"), target: self,action: #selector(addNewFolderBtn))
         let addMemo = UIBarButtonItem(title: "", image: UIImage(systemName: "square.and.pencil"), target: self, action: #selector(addNewMemoBtn))
@@ -68,7 +55,7 @@ class FolderTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     //새 메모로 가는 segue
-    @objc func addNewMemoBtn(_ sender: Any?){
+    @objc func addNewMemoBtnFolder(_ sender: Any?){
         performSegue(withIdentifier: "addNewMemo", sender: nil)
     }
     
