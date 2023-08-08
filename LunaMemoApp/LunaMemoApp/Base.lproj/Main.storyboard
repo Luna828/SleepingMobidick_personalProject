@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DGd-mF-ZAh">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Folder-->
+        <scene sceneID="GI1-by-tzA">
+            <objects>
+                <tableViewController id="z7P-lc-ntx" customClass="FolderTableViewController" customModule="LunaMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="bVQ-rd-4Wb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="separatorColor" systemColor="labelColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="xjo-eP-R9J">
+                                <rect key="frame" x="20" y="38" width="353" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xjo-eP-R9J" id="CA2-8X-Vt2">
+                                    <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Is8-Hh-bIc" kind="show" identifier="memoPage" id="SjQ-bG-vtr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z7P-lc-ntx" id="DG4-eC-yPF"/>
+                            <outlet property="delegate" destination="z7P-lc-ntx" id="Xyp-Qi-X2o"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Folder" id="jBV-sq-2TS"/>
+                    <connections>
+                        <outlet property="folderTableView" destination="bVQ-rd-4Wb" id="4GI-dq-GHu"/>
+                        <segue destination="nHv-pw-gcE" kind="show" identifier="addNewMemo" id="Orw-nT-QHA"/>
+                        <segue destination="Xhf-DZ-4R1" kind="show" identifier="addFolder" id="rXM-2V-BOe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfO-Nn-rXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-308" y="-330"/>
+        </scene>
+        <!--새 폴더 추가-->
+        <scene sceneID="oag-0E-Naa">
+            <objects>
+                <tableViewController id="TOa-D2-2ze" customClass="AddNewFolderController" customModule="LunaMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Mqx-F9-ycr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bSf-mH-T2S">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bSf-mH-T2S" id="G8n-Dd-ION">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TOa-D2-2ze" id="591-Zp-qrl"/>
+                            <outlet property="delegate" destination="TOa-D2-2ze" id="g8l-X5-Pq1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="새 폴더 추가" id="JXd-By-zSd">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="9cT-Nh-eX1">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="cancelBtn:" destination="TOa-D2-2ze" id="cPV-0Y-gG2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="9Qh-C4-RDv">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="confirmBtn:" destination="TOa-D2-2ze" id="aE7-WL-0T3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAc-3h-f4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-431" y="532"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JBC-HU-uxG">
+            <objects>
+                <navigationController id="Xhf-DZ-4R1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kB5-h5-DRq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jAA-Cj-OZo">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TOa-D2-2ze" kind="relationship" relationship="rootViewController" id="6FW-ie-Xpc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZ3-pS-lHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1240" y="532"/>
+        </scene>
+        <!--Memo-->
+        <scene sceneID="yBx-Pi-u59">
+            <objects>
+                <tableViewController id="Is8-Hh-bIc" customClass="MemoTableViewController" customModule="LunaMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="ZvQ-LQ-aCk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" textLabel="e6o-S4-5Lg" detailTextLabel="55t-xL-gYx" style="IBUITableViewCellStyleSubtitle" id="pFv-qa-Hzh" customClass="MemoCell" customModule="LunaMemoApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="38" width="353" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pFv-qa-Hzh" id="LGp-ql-DiX">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e6o-S4-5Lg">
+                                            <rect key="frame" x="20" y="6.0000000000000009" width="25" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55t-xL-gYx">
+                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="nHv-pw-gcE" kind="show" identifier="showMemo" id="56d-vP-C7j"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Is8-Hh-bIc" id="oHv-CO-lkQ"/>
+                            <outlet property="delegate" destination="Is8-Hh-bIc" id="5XV-2A-NAB"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="compose" id="I2b-bI-nKg">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <segue destination="nHv-pw-gcE" kind="show" identifier="newMemo" id="Nrw-K0-5Yc"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Memo" id="f17-rN-Ylu">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="pa9-9L-HM7">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="showCollectionViewMemo:" destination="Is8-Hh-bIc" id="pE2-A5-UNi"/>
+                                <segue destination="bSK-rf-hgl" kind="show" identifier="showCollectionView" id="OFz-5X-3z5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="memoTableView" destination="ZvQ-LQ-aCk" id="gUB-Wz-fPq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwH-Ao-aPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-346"/>
+        </scene>
+        <!--memo-->
+        <scene sceneID="fS4-vT-AI5">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bSK-rf-hgl" customClass="showMemoCollectionViewController" customModule="LunaMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zab-RI-bJx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nPp-Dy-NX8">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Ey-iW-lEF">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="Cgo-OR-XVe" customClass="memoClass" customModule="LunaMemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J4E-JR-xES">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="crC-Zc-Om0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oV-f8-YX8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="3oV-f8-YX8" secondAttribute="bottom" id="1su-yC-HuR"/>
+                                                <constraint firstItem="3oV-f8-YX8" firstAttribute="leading" secondItem="J4E-JR-xES" secondAttribute="leading" id="HDs-0L-ap0"/>
+                                                <constraint firstAttribute="trailing" secondItem="3oV-f8-YX8" secondAttribute="trailing" id="W67-vE-Drf"/>
+                                                <constraint firstItem="3oV-f8-YX8" firstAttribute="top" secondItem="J4E-JR-xES" secondAttribute="top" id="mj0-CS-Vuc"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="120" height="120"/>
+                                        <connections>
+                                            <outlet property="collectionBtn" destination="3oV-f8-YX8" id="fB4-3o-PRK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G5r-T5-Xlx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nPp-Dy-NX8" firstAttribute="leading" secondItem="G5r-T5-Xlx" secondAttribute="leading" id="0Ya-Ga-fjR"/>
+                            <constraint firstItem="G5r-T5-Xlx" firstAttribute="bottom" secondItem="nPp-Dy-NX8" secondAttribute="bottom" id="Jeo-d9-0Yc"/>
+                            <constraint firstItem="G5r-T5-Xlx" firstAttribute="trailing" secondItem="nPp-Dy-NX8" secondAttribute="trailing" id="PEb-c8-BFP"/>
+                            <constraint firstItem="nPp-Dy-NX8" firstAttribute="top" secondItem="G5r-T5-Xlx" secondAttribute="top" id="bcx-mu-PBw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="memo" largeTitleDisplayMode="never" id="El6-yx-3bB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="myCollectionView" destination="nPp-Dy-NX8" id="Gw4-n0-3uB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gk3-89-H5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070.9923664122136" y="437.32394366197184"/>
+        </scene>
+        <!--New Memo Controller-->
+        <scene sceneID="9Qx-fV-ysn">
+            <objects>
+                <viewController id="nHv-pw-gcE" customClass="NewMemoController" customModule="LunaMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hSn-QR-Chb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-c3-ePn">
+                                <rect key="frame" x="0.0" y="103" width="409" height="749"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MXc-hR-apX"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ZC9-1L-HaS"/>
+                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="안녕" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K7N-ce-llC">
+                                <rect key="frame" x="0.0" y="103" width="0.0" height="749"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uhv-bV-XX6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="height" secondItem="8UH-c3-ePn" secondAttribute="height" id="0mC-RT-zLd"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="leading" secondItem="Uhv-bV-XX6" secondAttribute="leading" id="6Lj-VV-WhX"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="top" secondItem="Uhv-bV-XX6" secondAttribute="top" id="Ezr-pL-OMB"/>
+                            <constraint firstAttribute="bottom" secondItem="K7N-ce-llC" secondAttribute="bottom" id="OQB-a8-cIW"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="width" secondItem="8UH-c3-ePn" secondAttribute="width" multiplier="0.96088" id="Vvq-7s-B0f"/>
+                            <constraint firstItem="8UH-c3-ePn" firstAttribute="leading" secondItem="Uhv-bV-XX6" secondAttribute="leading" id="XtQ-La-BBc"/>
+                            <constraint firstAttribute="trailing" secondItem="8UH-c3-ePn" secondAttribute="trailing" id="bQp-ct-GLQ"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="trailing" secondItem="8UH-c3-ePn" secondAttribute="trailing" id="c3n-8w-NSE"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="leading" secondItem="8UH-c3-ePn" secondAttribute="leading" id="edz-1A-meI"/>
+                            <constraint firstItem="8UH-c3-ePn" firstAttribute="top" secondItem="Uhv-bV-XX6" secondAttribute="top" id="h9K-u5-ZeS"/>
+                            <constraint firstAttribute="bottom" secondItem="8UH-c3-ePn" secondAttribute="bottom" id="mmD-Qn-bc4"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="trailing" secondItem="Uhv-bV-XX6" secondAttribute="trailing" id="mxr-3u-Ltq"/>
+                            <constraint firstItem="K7N-ce-llC" firstAttribute="centerX" secondItem="8UH-c3-ePn" secondAttribute="centerX" id="rKq-an-BFM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="5H3-5U-Ce2">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="h7F-DP-MBE">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="saveBtn:" destination="nHv-pw-gcE" id="Pjy-Hd-icj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="memoTextView" destination="K7N-ce-llC" id="jge-EG-KjV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1m-74-lgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2237" y="-330"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0dv-O8-IOQ">
+            <objects>
+                <navigationController toolbarHidden="NO" id="DGd-mF-ZAh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="kcO-wM-3gu">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N1r-Fn-xMc">
+                        <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="z7P-lc-ntx" kind="relationship" relationship="rootViewController" id="RiF-ya-HhU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bax-Dx-lzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1117" y="-330"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nrw-K0-5Yc"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

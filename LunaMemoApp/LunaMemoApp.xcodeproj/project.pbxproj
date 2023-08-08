@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93C8C88943E856E0BF5FE0B4 /* Pods_LunaMemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA554BB27D03EBD2BE6398 /* Pods_LunaMemoApp.framework */; };
+		FB09F0962A79E99D00935D08 /* NewMemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB09F0952A79E99D00935D08 /* NewMemoController.swift */; };
+		FB09F0982A79EE7E00935D08 /* NewMemoController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB09F0972A79EE7E00935D08 /* NewMemoController+Alert.swift */; };
+		FB09F09A2A7A159E00935D08 /* showMemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB09F0992A7A159E00935D08 /* showMemoController.swift */; };
+		FB900E1A2A789D1D00148681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E192A789D1D00148681 /* AppDelegate.swift */; };
+		FB900E1C2A789D1D00148681 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E1B2A789D1D00148681 /* SceneDelegate.swift */; };
+		FB900E212A789D1D00148681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB900E1F2A789D1D00148681 /* Main.storyboard */; };
+		FB900E232A789D1E00148681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB900E222A789D1E00148681 /* Assets.xcassets */; };
+		FB900E262A789D1E00148681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB900E242A789D1E00148681 /* LaunchScreen.storyboard */; };
+		FB900E2F2A78C19000148681 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E2E2A78C19000148681 /* Model.swift */; };
+		FB900E312A78C31000148681 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E302A78C31000148681 /* FolderTableViewController.swift */; };
+		FB900E332A78CD7500148681 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB900E322A78CD7500148681 /* FolderCell.xib */; };
+		FB900E352A78D2BF00148681 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E342A78D2BF00148681 /* FolderCell.swift */; };
+		FBA122B22A7F736F00D101B7 /* showMemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA122B12A7F736F00D101B7 /* showMemoCollectionViewController.swift */; };
+		FBE08C072A7B4D9D0044A8C7 /* AddNewFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */; };
+		FBE08C0A2A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C082A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld */; };
+		FBE08C112A7BC9B90044A8C7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C102A7BC9B90044A8C7 /* DataManager.swift */; };
+		FBF358852A78E84700E037A3 /* MemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF358842A78E84700E037A3 /* MemoTableViewController.swift */; };
+		FBF358872A78F0A700E037A3 /* MemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF358862A78F0A700E037A3 /* MemoCell.xib */; };
+		FBF358892A78F16100E037A3 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF358882A78F16100E037A3 /* MemoCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		246837729B9873B08DADFC07 /* Pods-LunaMemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunaMemoApp.release.xcconfig"; path = "Target Support Files/Pods-LunaMemoApp/Pods-LunaMemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		9717FE8DE58A8B925FB83656 /* Pods-LunaMemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunaMemoApp.debug.xcconfig"; path = "Target Support Files/Pods-LunaMemoApp/Pods-LunaMemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E1CA554BB27D03EBD2BE6398 /* Pods_LunaMemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunaMemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB09F0952A79E99D00935D08 /* NewMemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMemoController.swift; sourceTree = "<group>"; };
+		FB09F0972A79EE7E00935D08 /* NewMemoController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewMemoController+Alert.swift"; sourceTree = "<group>"; };
+		FB09F0992A7A159E00935D08 /* showMemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showMemoController.swift; sourceTree = "<group>"; };
+		FB900E162A789D1D00148681 /* LunaMemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunaMemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB900E192A789D1D00148681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB900E1B2A789D1D00148681 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FB900E202A789D1D00148681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB900E222A789D1E00148681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB900E252A789D1E00148681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB900E272A789D1E00148681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB900E2E2A78C19000148681 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FB900E302A78C31000148681 /* FolderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
+		FB900E322A78CD7500148681 /* FolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderCell.xib; sourceTree = "<group>"; };
+		FB900E342A78D2BF00148681 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		FBA122B12A7F736F00D101B7 /* showMemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showMemoCollectionViewController.swift; sourceTree = "<group>"; };
+		FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFolderController.swift; sourceTree = "<group>"; };
+		FBE08C092A7BC3CA0044A8C7 /* LunaMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LunaMemo.xcdatamodel; sourceTree = "<group>"; };
+		FBE08C0B2A7BC7B60044A8C7 /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FBE08C0C2A7BC7B60044A8C7 /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FBE08C102A7BC9B90044A8C7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FBF358842A78E84700E037A3 /* MemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewController.swift; sourceTree = "<group>"; };
+		FBF358862A78F0A700E037A3 /* MemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoCell.xib; sourceTree = "<group>"; };
+		FBF358882A78F16100E037A3 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB900E132A789D1D00148681 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93C8C88943E856E0BF5FE0B4 /* Pods_LunaMemoApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		776FF09B8B5D0F6EC20FA7A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA554BB27D03EBD2BE6398 /* Pods_LunaMemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3FA5A0DFFA3F3D2A45CAA1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9717FE8DE58A8B925FB83656 /* Pods-LunaMemoApp.debug.xcconfig */,
+				246837729B9873B08DADFC07 /* Pods-LunaMemoApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB900E0D2A789D1D00148681 = {
+			isa = PBXGroup;
+			children = (
+				FB900E182A789D1D00148681 /* LunaMemoApp */,
+				FB900E172A789D1D00148681 /* Products */,
+				A3FA5A0DFFA3F3D2A45CAA1C /* Pods */,
+				776FF09B8B5D0F6EC20FA7A1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB900E172A789D1D00148681 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB900E162A789D1D00148681 /* LunaMemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB900E182A789D1D00148681 /* LunaMemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				FBE08C0F2A7BC9A30044A8C7 /* Data */,
+				FBE08C0D2A7BC7B60044A8C7 /* MemoListItem */,
+				FBE08C0E2A7BC7CF0044A8C7 /* Controller */,
+				FB900E2D2A78C18400148681 /* Model */,
+				FB900E192A789D1D00148681 /* AppDelegate.swift */,
+				FB900E1B2A789D1D00148681 /* SceneDelegate.swift */,
+				FB900E1F2A789D1D00148681 /* Main.storyboard */,
+				FB900E222A789D1E00148681 /* Assets.xcassets */,
+				FB900E242A789D1E00148681 /* LaunchScreen.storyboard */,
+				FB900E272A789D1E00148681 /* Info.plist */,
+				FB900E322A78CD7500148681 /* FolderCell.xib */,
+				FB900E342A78D2BF00148681 /* FolderCell.swift */,
+				FBF358862A78F0A700E037A3 /* MemoCell.xib */,
+				FBF358882A78F16100E037A3 /* MemoCell.swift */,
+				FBE08C082A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld */,
+			);
+			path = LunaMemoApp;
+			sourceTree = "<group>";
+		};
+		FB900E2D2A78C18400148681 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB900E2E2A78C19000148681 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBE08C0D2A7BC7B60044A8C7 /* MemoListItem */ = {
+			isa = PBXGroup;
+			children = (
+				FBE08C0B2A7BC7B60044A8C7 /* Memo+CoreDataClass.swift */,
+				FBE08C0C2A7BC7B60044A8C7 /* Memo+CoreDataProperties.swift */,
+			);
+			name = MemoListItem;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FBE08C0E2A7BC7CF0044A8C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB900E302A78C31000148681 /* FolderTableViewController.swift */,
+				FBF358842A78E84700E037A3 /* MemoTableViewController.swift */,
+				FB09F0952A79E99D00935D08 /* NewMemoController.swift */,
+				FB09F0972A79EE7E00935D08 /* NewMemoController+Alert.swift */,
+				FB09F0992A7A159E00935D08 /* showMemoController.swift */,
+				FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */,
+				FBA122B12A7F736F00D101B7 /* showMemoCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FBE08C0F2A7BC9A30044A8C7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FBE08C102A7BC9B90044A8C7 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB900E152A789D1D00148681 /* LunaMemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB900E2A2A789D1E00148681 /* Build configuration list for PBXNativeTarget "LunaMemoApp" */;
+			buildPhases = (
+				BB7F918A90A0F19EC71FA6D4 /* [CP] Check Pods Manifest.lock */,
+				FB900E122A789D1D00148681 /* Sources */,
+				FB900E132A789D1D00148681 /* Frameworks */,
+				FB900E142A789D1D00148681 /* Resources */,
+				1D6B71510389FE5A7FFA7D5A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LunaMemoApp;
+			productName = LunaMemoApp;
+			productReference = FB900E162A789D1D00148681 /* LunaMemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB900E0E2A789D1D00148681 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FB900E152A789D1D00148681 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FB900E112A789D1D00148681 /* Build configuration list for PBXProject "LunaMemoApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB900E0D2A789D1D00148681;
+			productRefGroup = FB900E172A789D1D00148681 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB900E152A789D1D00148681 /* LunaMemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB900E142A789D1D00148681 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB900E262A789D1E00148681 /* LaunchScreen.storyboard in Resources */,
+				FB900E232A789D1E00148681 /* Assets.xcassets in Resources */,
+				FB900E212A789D1D00148681 /* Main.storyboard in Resources */,
+				FBF358872A78F0A700E037A3 /* MemoCell.xib in Resources */,
+				FB900E332A78CD7500148681 /* FolderCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D6B71510389FE5A7FFA7D5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LunaMemoApp/Pods-LunaMemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LunaMemoApp/Pods-LunaMemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LunaMemoApp/Pods-LunaMemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB7F918A90A0F19EC71FA6D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LunaMemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB900E122A789D1D00148681 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE08C072A7B4D9D0044A8C7 /* AddNewFolderController.swift in Sources */,
+				FB09F09A2A7A159E00935D08 /* showMemoController.swift in Sources */,
+				FBF358892A78F16100E037A3 /* MemoCell.swift in Sources */,
+				FBE08C0A2A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld in Sources */,
+				FB900E2F2A78C19000148681 /* Model.swift in Sources */,
+				FBA122B22A7F736F00D101B7 /* showMemoCollectionViewController.swift in Sources */,
+				FB900E352A78D2BF00148681 /* FolderCell.swift in Sources */,
+				FB09F0982A79EE7E00935D08 /* NewMemoController+Alert.swift in Sources */,
+				FB900E1A2A789D1D00148681 /* AppDelegate.swift in Sources */,
+				FB900E1C2A789D1D00148681 /* SceneDelegate.swift in Sources */,
+				FB900E312A78C31000148681 /* FolderTableViewController.swift in Sources */,
+				FB09F0962A79E99D00935D08 /* NewMemoController.swift in Sources */,
+				FBE08C112A7BC9B90044A8C7 /* DataManager.swift in Sources */,
+				FBF358852A78E84700E037A3 /* MemoTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB900E1F2A789D1D00148681 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB900E202A789D1D00148681 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB900E242A789D1E00148681 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB900E252A789D1E00148681 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB900E282A789D1E00148681 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB900E292A789D1E00148681 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB900E2B2A789D1E00148681 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9717FE8DE58A8B925FB83656 /* Pods-LunaMemoApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V7K58MBUV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunaMemoApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luna.LunaMemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB900E2C2A789D1E00148681 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 246837729B9873B08DADFC07 /* Pods-LunaMemoApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V7K58MBUV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunaMemoApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luna.LunaMemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB900E112A789D1D00148681 /* Build configuration list for PBXProject "LunaMemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB900E282A789D1E00148681 /* Debug */,
+				FB900E292A789D1E00148681 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB900E2A2A789D1E00148681 /* Build configuration list for PBXNativeTarget "LunaMemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB900E2B2A789D1E00148681 /* Debug */,
+				FB900E2C2A789D1E00148681 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FBE08C082A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FBE08C092A7BC3CA0044A8C7 /* LunaMemo.xcdatamodel */,
+			);
+			currentVersion = FBE08C092A7BC3CA0044A8C7 /* LunaMemo.xcdatamodel */;
+			path = LunaMemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FB900E0E2A789D1D00148681 /* Project object */;
+}
