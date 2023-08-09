@@ -17,15 +17,15 @@
 		FB900E232A789D1E00148681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB900E222A789D1E00148681 /* Assets.xcassets */; };
 		FB900E262A789D1E00148681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB900E242A789D1E00148681 /* LaunchScreen.storyboard */; };
 		FB900E2F2A78C19000148681 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E2E2A78C19000148681 /* Model.swift */; };
-		FB900E312A78C31000148681 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E302A78C31000148681 /* FolderTableViewController.swift */; };
+		FB900E312A78C31000148681 /* FolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E302A78C31000148681 /* FolderVC.swift */; };
 		FB900E332A78CD7500148681 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB900E322A78CD7500148681 /* FolderCell.xib */; };
 		FB900E352A78D2BF00148681 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB900E342A78D2BF00148681 /* FolderCell.swift */; };
 		FBA122B22A7F736F00D101B7 /* showMemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA122B12A7F736F00D101B7 /* showMemoCollectionViewController.swift */; };
 		FBC7768C2A822A4800411396 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7768B2A822A4800411396 /* TableViewExtension.swift */; };
 		FBC7768F2A8230A600411396 /* dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7768E2A8230A600411396 /* dateFormatter.swift */; };
-		FBC776912A82320800411396 /* toolBarItem_memoTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */; };
-		FBC776932A82341000411396 /* moveToImportantMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776922A82341000411396 /* moveToImportantMemo.swift */; };
-		FBC776952A8239C400411396 /* memoTableView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776942A8239C400411396 /* memoTableView_extension.swift */; };
+		FBC776912A82320800411396 /* ToolBarItem_memoTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776902A82320800411396 /* ToolBarItem_memoTableVC.swift */; };
+		FBC776932A82341000411396 /* MoveToImportantMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776922A82341000411396 /* MoveToImportantMemo.swift */; };
+		FBC776952A8239C400411396 /* MemoTableView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776942A8239C400411396 /* MemoTableView_extension.swift */; };
 		FBC776972A82406000411396 /* showMemoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776962A82406000411396 /* showMemoExtension.swift */; };
 		FBC776992A82419D00411396 /* addNewFolderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776982A82419D00411396 /* addNewFolderExtension.swift */; };
 		FBE08C072A7B4D9D0044A8C7 /* AddNewFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */; };
@@ -51,15 +51,15 @@
 		FB900E252A789D1E00148681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB900E272A789D1E00148681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB900E2E2A78C19000148681 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		FB900E302A78C31000148681 /* FolderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
+		FB900E302A78C31000148681 /* FolderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderVC.swift; sourceTree = "<group>"; };
 		FB900E322A78CD7500148681 /* FolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderCell.xib; sourceTree = "<group>"; };
 		FB900E342A78D2BF00148681 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		FBA122B12A7F736F00D101B7 /* showMemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showMemoCollectionViewController.swift; sourceTree = "<group>"; };
 		FBC7768B2A822A4800411396 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		FBC7768E2A8230A600411396 /* dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFormatter.swift; sourceTree = "<group>"; };
-		FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolBarItem_memoTableVC.swift; sourceTree = "<group>"; };
-		FBC776922A82341000411396 /* moveToImportantMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moveToImportantMemo.swift; sourceTree = "<group>"; };
-		FBC776942A8239C400411396 /* memoTableView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoTableView_extension.swift; sourceTree = "<group>"; };
+		FBC776902A82320800411396 /* ToolBarItem_memoTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarItem_memoTableVC.swift; sourceTree = "<group>"; };
+		FBC776922A82341000411396 /* MoveToImportantMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToImportantMemo.swift; sourceTree = "<group>"; };
+		FBC776942A8239C400411396 /* MemoTableView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableView_extension.swift; sourceTree = "<group>"; };
 		FBC776962A82406000411396 /* showMemoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showMemoExtension.swift; sourceTree = "<group>"; };
 		FBC776982A82419D00411396 /* addNewFolderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewFolderExtension.swift; sourceTree = "<group>"; };
 		FBE08C062A7B4D9D0044A8C7 /* AddNewFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFolderController.swift; sourceTree = "<group>"; };
@@ -154,9 +154,9 @@
 		FBC7768A2A82213E00411396 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FBC776922A82341000411396 /* moveToImportantMemo.swift */,
-				FBC776902A82320800411396 /* toolBarItem_memoTableVC.swift */,
-				FBC776942A8239C400411396 /* memoTableView_extension.swift */,
+				FBC776922A82341000411396 /* MoveToImportantMemo.swift */,
+				FBC776902A82320800411396 /* ToolBarItem_memoTableVC.swift */,
+				FBC776942A8239C400411396 /* MemoTableView_extension.swift */,
 				FB09F0972A79EE7E00935D08 /* NewMemoController+Alert.swift */,
 				FBC7768B2A822A4800411396 /* TableViewExtension.swift */,
 				FBC776962A82406000411396 /* showMemoExtension.swift */,
@@ -186,7 +186,7 @@
 		FBE08C0E2A7BC7CF0044A8C7 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				FB900E302A78C31000148681 /* FolderTableViewController.swift */,
+				FB900E302A78C31000148681 /* FolderVC.swift */,
 				FBF358842A78E84700E037A3 /* MemoTableViewController.swift */,
 				FB09F0952A79E99D00935D08 /* NewMemoController.swift */,
 				FB09F0992A7A159E00935D08 /* showMemoController.swift */,
@@ -327,17 +327,17 @@
 				FBC7768C2A822A4800411396 /* TableViewExtension.swift in Sources */,
 				FBE08C0A2A7BC3CA0044A8C7 /* LunaMemo.xcdatamodeld in Sources */,
 				FB900E2F2A78C19000148681 /* Model.swift in Sources */,
-				FBC776932A82341000411396 /* moveToImportantMemo.swift in Sources */,
+				FBC776932A82341000411396 /* MoveToImportantMemo.swift in Sources */,
 				FBA122B22A7F736F00D101B7 /* showMemoCollectionViewController.swift in Sources */,
 				FB900E352A78D2BF00148681 /* FolderCell.swift in Sources */,
 				FBC776992A82419D00411396 /* addNewFolderExtension.swift in Sources */,
-				FBC776952A8239C400411396 /* memoTableView_extension.swift in Sources */,
+				FBC776952A8239C400411396 /* MemoTableView_extension.swift in Sources */,
 				FB09F0982A79EE7E00935D08 /* NewMemoController+Alert.swift in Sources */,
 				FB900E1A2A789D1D00148681 /* AppDelegate.swift in Sources */,
 				FB900E1C2A789D1D00148681 /* SceneDelegate.swift in Sources */,
-				FBC776912A82320800411396 /* toolBarItem_memoTableVC.swift in Sources */,
+				FBC776912A82320800411396 /* ToolBarItem_memoTableVC.swift in Sources */,
 				FBC776972A82406000411396 /* showMemoExtension.swift in Sources */,
-				FB900E312A78C31000148681 /* FolderTableViewController.swift in Sources */,
+				FB900E312A78C31000148681 /* FolderVC.swift in Sources */,
 				FBC7768F2A8230A600411396 /* dateFormatter.swift in Sources */,
 				FB09F0962A79E99D00935D08 /* NewMemoController.swift in Sources */,
 				FBE08C112A7BC9B90044A8C7 /* DataManager.swift in Sources */,
