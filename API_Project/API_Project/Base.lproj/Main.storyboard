@@ -107,14 +107,31 @@
         <!--View Controller-->
         <scene sceneID="GTw-Hk-91W">
             <objects>
-                <viewController id="1gF-1V-a3U" sceneMemberID="viewController">
+                <viewController id="1gF-1V-a3U" customClass="ViewController" customModule="API_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Od9-ha-vWx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvc-WP-1ZJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="THN-Du-rol"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xvc-WP-1ZJ" firstAttribute="leading" secondItem="THN-Du-rol" secondAttribute="leading" id="7Ld-Nw-crQ"/>
+                            <constraint firstItem="xvc-WP-1ZJ" firstAttribute="top" secondItem="THN-Du-rol" secondAttribute="top" id="Ioz-Ne-dKm"/>
+                            <constraint firstItem="THN-Du-rol" firstAttribute="bottom" secondItem="xvc-WP-1ZJ" secondAttribute="bottom" id="LVn-2n-KnU"/>
+                            <constraint firstItem="THN-Du-rol" firstAttribute="trailing" secondItem="xvc-WP-1ZJ" secondAttribute="trailing" id="c13-nD-Jmc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="ev5-Ok-f0Y"/>
+                    <connections>
+                        <outlet property="test" destination="xvc-WP-1ZJ" id="U4Q-yb-IiC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1CQ-mx-7dN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

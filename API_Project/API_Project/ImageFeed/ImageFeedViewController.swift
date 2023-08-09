@@ -33,10 +33,9 @@ extension ImageFeedViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCollectionViewCell", for: indexPath) as! FeedCollectionViewCell
         
-        cell.imageViewFeed.image = UIImage(systemName: "house")
-        //cell.imageViewFeed.image = UIImage(named: "splash")
-        cell.contentView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        cell.contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        cell.imageViewFeed.image = UIImage(named: "splash")
+//        cell.contentView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        cell.contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         //cell.backgroundColor = .black
         
         return cell
@@ -48,7 +47,7 @@ extension ImageFeedViewController: UICollectionViewDelegateFlowLayout {
     //셀 사이즈 결정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
-        let itemSpacing: CGFloat = 10 //셀 사이 간격 너비
+        let itemSpacing: CGFloat = 1 //셀 사이 간격 너비
         let cellWidth: CGFloat = (width - (sectionInsets.left + sectionInsets.right) - (itemSpacing * 2)) / 3
 
         return CGSize(width: cellWidth, height: cellWidth)
