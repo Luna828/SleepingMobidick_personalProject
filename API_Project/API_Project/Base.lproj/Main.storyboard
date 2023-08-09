@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,21 +58,51 @@
             </objects>
             <point key="canvasLocation" x="1804" y="789"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Feed View Controller-->
         <scene sceneID="1uG-ix-o4r">
             <objects>
-                <viewController id="iAY-r9-mZ3" sceneMemberID="viewController">
+                <viewController id="iAY-r9-mZ3" customClass="ImageFeedViewController" customModule="API_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1xk-4i-6kQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="FeedCollectionViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ovG-Y1-7ht">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VGV-rz-Psh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCollectionViewCell" id="0yJ-QK-nBE" customClass="FeedCollectionViewCell" customModule="API_Project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u6T-eX-1cV">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fpE-CM-ghK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ovG-Y1-7ht" firstAttribute="leading" secondItem="fpE-CM-ghK" secondAttribute="leading" id="2gb-3Z-D8M"/>
+                            <constraint firstItem="ovG-Y1-7ht" firstAttribute="top" secondItem="fpE-CM-ghK" secondAttribute="top" id="DSd-c2-kRe"/>
+                            <constraint firstItem="ovG-Y1-7ht" firstAttribute="bottom" secondItem="fpE-CM-ghK" secondAttribute="bottom" id="PZV-Jl-8Kn"/>
+                            <constraint firstItem="ovG-Y1-7ht" firstAttribute="trailing" secondItem="fpE-CM-ghK" secondAttribute="trailing" id="o1d-UX-GPu"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="h6W-0f-h47"/>
+                    <connections>
+                        <outlet property="imageCollectionView" destination="ovG-Y1-7ht" id="srX-G6-xG8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRJ-zM-MZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-873" y="789"/>
+            <point key="canvasLocation" x="-874.04580152671747" y="788.73239436619724"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GTw-Hk-91W">
