@@ -89,3 +89,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 .DS_Store
+API_Project/API_Project/Secrets.swift

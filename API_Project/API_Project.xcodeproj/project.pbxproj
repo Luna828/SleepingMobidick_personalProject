@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB4272732A83201800295176 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4272722A83201800295176 /* Secrets.swift */; };
 		FBC776A72A8283F800411396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776A62A8283F800411396 /* AppDelegate.swift */; };
 		FBC776A92A8283F800411396 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776A82A8283F800411396 /* SceneDelegate.swift */; };
 		FBC776AB2A8283F800411396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC776AA2A8283F800411396 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB4272722A83201800295176 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FBC776A32A8283F800411396 /* API_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = API_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC776A62A8283F800411396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBC776A82A8283F800411396 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				FBC776B42A8283F900411396 /* LaunchScreen.storyboard */,
 				FBC776B72A8283F900411396 /* Info.plist */,
 				FBC776AF2A8283F800411396 /* API_Project.xcdatamodeld */,
+				FB4272722A83201800295176 /* Secrets.swift */,
 			);
 			path = API_Project;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				FBC776C42A829A1600411396 /* ImageFeedViewController.swift in Sources */,
 				FBC776B12A8283F800411396 /* API_Project.xcdatamodeld in Sources */,
+				FB4272732A83201800295176 /* Secrets.swift in Sources */,
 				FBC776AB2A8283F800411396 /* ViewController.swift in Sources */,
 				FBC776C02A82933700411396 /* FeedCollectionViewCell.swift in Sources */,
 				FBC776A72A8283F800411396 /* AppDelegate.swift in Sources */,
