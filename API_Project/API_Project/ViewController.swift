@@ -1,57 +1,105 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let stackView = UIStackView()
-    let imgView = UIImageView()
+    let logo = UIImageView()
     let searchBar = UISearchBar()
     let tableView = UITableView()
     let button = UIButton(type: .system)
     var movieData: [(title: String, average: Double)] = []
+    
+    var totalList: [(title: String, average: Double)] = []
+
+    
+    @objc func sortButtonClicked() {
+        if button.titleLabel?.text == "평점순" {
+            movieData.sort{ $0.average > $1.average }
+            button.setTitle("알파벳순", for: .normal)
+            print(movieData)
+        } else {
+            movieData.sort{ $0.title < $1.title }
+            button.setTitle("평점순", for: .normal)
+        }
+       
+        tableView.reloadData()
+    }
+    
+    @objc func sort_prac(){
+        if button.titleLabel?.text == "평점순" {
+            movieData.sort{ $0.average > $1.average }
+            button.setTitle("전체목록순", for: .normal)
+            print(movieData)
+        } else {
+            
+            button.setTitle("평점순", for: .normal)
+        }
+       
+        tableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stackView.axis = .vertical
-        stackView.spacing = 0
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
+        view.addSubview(logo)
+        view.addSubview(searchBar)
+        view.addSubview(button)
+        view.addSubview(tableView)
         
+        logo.backgroundColor = .white
+        logo.contentMode = .scaleAspectFit
+        logo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: view.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            logo.heightAnchor.constraint(equalToConstant: 40)
         ])
         
-        imgView.backgroundColor = .white
-        imgView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        imgView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        stackView.addArrangedSubview(imgView)
-        
-        searchBar.placeholder = "Search"
-        stackView.addArrangedSubview(searchBar)
+        searchBar.placeholder = "영화제목을 입력해주세요"
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 20),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
         
         button.setTitle("평점순", for: .normal)
-        stackView.addArrangedSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            button.heightAnchor.constraint(equalToConstant: 10)
+        ])
+        
+        button.addTarget(self, action: #selector(sortButtonClicked), for: .touchUpInside)
         
         tableView.dataSource = self
         tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieCell")
-        //        tableView.register(UINib(nibName: "movieTableViewCell", bundle: nil), forCellReuseIdentifier: "movieCell")
-        stackView.addArrangedSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+        ])
         
         APIManager.fetch { [weak self] titles, average in
             DispatchQueue.main.async {
                 if let titles = titles, let average = average {
-                    self?.movieData = zip(titles, average).map{($0, $1)} //데이터 매칭 저장
+                    self?.movieData = zip(titles, average).map{($0, $1)} // 데이터 매칭 저장
                     self?.tableView.reloadData()
                 }
             }
         }
-        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30 // Example number of rows
+        return movieData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,51 +109,9 @@ class ViewController: UIViewController, UITableViewDataSource {
             cell.ImageView = UIImageView(image: UIImage(systemName: "house"))
             cell.movieTitle.text = data.title
             cell.voteAverage.text = String(data.average)
-            
         }
         return cell
     }
 }
 
-class MovieTableViewCell: UITableViewCell {
-    var ImageView = UIImageView()
-    let movieTitle = UILabel()
-    let voteAverage = UILabel()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        let horizontalStackView = UIStackView()
-        horizontalStackView.axis = .horizontal
-        horizontalStackView.spacing = 8
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(horizontalStackView)
-        
-        NSLayoutConstraint.activate([
-            horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            horizontalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            horizontalStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-        ])
-        
-        ImageView.backgroundColor = .systemPink
-        ImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        ImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        horizontalStackView.addArrangedSubview(ImageView)
-        
-        let verticalStackView = UIStackView()
-        verticalStackView.axis = .vertical
-        verticalStackView.spacing = 8
-        horizontalStackView.addArrangedSubview(verticalStackView)
-        
-        movieTitle.textColor = .black
-        verticalStackView.addArrangedSubview(movieTitle)
-        
-        voteAverage.textColor = .gray
-        verticalStackView.addArrangedSubview(voteAverage)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+

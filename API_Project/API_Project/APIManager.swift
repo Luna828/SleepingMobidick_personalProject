@@ -6,12 +6,12 @@ struct APIManager {
     ([String]?,[Double]?) -> Void){
         let headers = [
             "accept": "application/json",
-            "Authorization": "\(Secrets.API_KEY)"
+            "Authorization": "\(Secrets.ACCESS_TOKEN)"
         ]
         
         let request = NSMutableURLRequest(url: NSURL(string: "\(Secrets.BASE_URL)/movie/popular?")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
+            cachePolicy: .useProtocolCachePolicy,
+            timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
@@ -22,7 +22,7 @@ struct APIManager {
                 return
             }
             guard let data = data else {
-                print("No data received")
+                print("데이터를 받을 수 없습니다")
                 return
             }
             print("data: \(data)")
