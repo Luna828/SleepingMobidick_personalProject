@@ -36,10 +36,6 @@ class MovieTableViewCell: UITableViewCell {
         horizontalStackView.addArrangedSubview(verticalStackView)
         
         movieTitle.textColor = .black
-//        movieTitle.translatesAutoresizingMaskIntoConstraints = false
-//        movieTitle.leadingAnchor.constraint(equalToSystemSpacingAfter: ImageView.safeAreaLayoutGuide.leadingAnchor, multiplier: 0).isActive = true
-//        movieTitle.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0).isActive = true
-        
         verticalStackView.addArrangedSubview(movieTitle)
         
         voteAverage.textColor = .gray

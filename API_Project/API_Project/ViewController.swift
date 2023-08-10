@@ -2,7 +2,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let IMG_URL = "https://image.tmdb.org/t/p/w500/"
+    let IMG_URL = "https://image.tmdb.org/t/p/w500"
     
     let logo = UIImageView()
     let searchBar = UISearchBar()
@@ -107,16 +107,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return movieData.count
     }
     
+    func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+            
+            let image = UIImage(data: data)
+            completion(image)
+        }.resume()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         if indexPath.row < movieData.count {
             let data = movieData[indexPath.row]
-            cell.ImageView.image = UIImage(named: "\(IMG_URL)\(data.posterPath)")
-            //cell.ImageView = UIImageView(image: UIImage(systemName: "house"))
-            cell.movieTitle.text = data.title
-            cell.voteAverage.text = String(data.average)
-            
-            print("111111111111\(cell.ImageView)")
+            downloadImage(from: "\(IMG_URL)\(data.posterPath)"){ image in
+                DispatchQueue.main.async {
+                    cell.ImageView.image = image ?? UIImage(systemName: "house")
+                    //cell.ImageView = UIImageView(image: UIImage(systemName: "house"))
+                    cell.movieTitle.text = data.title
+                    cell.voteAverage.text = String(data.average)
+                }
+                
+            }
         }
         return cell
     }
