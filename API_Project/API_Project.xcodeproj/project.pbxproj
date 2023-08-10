@@ -70,7 +70,7 @@
 		FBC776A52A8283F800411396 /* API_Project */ = {
 			isa = PBXGroup;
 			children = (
-				FBC776C22A82933E00411396 /* ImageFeed */,
+				FBC776C22A82933E00411396 /* showFavoriteMovie */,
 				FBC776A62A8283F800411396 /* AppDelegate.swift */,
 				FBC776A82A8283F800411396 /* SceneDelegate.swift */,
 				FBC776AA2A8283F800411396 /* ViewController.swift */,
@@ -95,13 +95,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		FBC776C22A82933E00411396 /* ImageFeed */ = {
+		FBC776C22A82933E00411396 /* showFavoriteMovie */ = {
 			isa = PBXGroup;
 			children = (
 				FBC776BD2A8292A700411396 /* Cell */,
 				FBC776C32A829A1600411396 /* ImageFeedViewController.swift */,
 			);
-			path = ImageFeed;
+			path = showFavoriteMovie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

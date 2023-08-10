@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,20 +21,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="169" height="240"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="FeedCollectionViewCell" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="n7N-Oh-9Bc">
-                                <rect key="frame" x="0.0" y="-1" width="169" height="200"/>
+                                <rect key="frame" x="0.0" y="-1" width="169" height="200.33333333333331"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-Mn-ruy">
-                                <rect key="frame" x="0.0" y="199.33333333333334" width="169" height="20.333333333333343"/>
+                                <rect key="frame" x="0.0" y="199.66666666666666" width="169" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-cB-5AD">
-                                <rect key="frame" x="0.0" y="219.66666666666666" width="169" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-ug-Y6L">
+                                <rect key="frame" x="0.0" y="220" width="169" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XHY-aL-kWO">
+                                        <rect key="frame" x="0.0" y="-0.33333333333333215" width="20" height="19.666666666666664"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="HXs-q0-ny5"/>
+                                            <constraint firstAttribute="height" constant="20" id="mnn-hs-CDw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-cB-5AD">
+                                        <rect key="frame" x="20" y="0.0" width="149" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XHY-aL-kWO" firstAttribute="height" secondItem="DBT-cB-5AD" secondAttribute="height" id="MeY-kv-r6T"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -47,14 +64,18 @@
             </constraints>
             <size key="customSize" width="169" height="240"/>
             <connections>
+                <outlet property="averageVote" destination="DBT-cB-5AD" id="IVc-Bu-HOC"/>
                 <outlet property="imageViewFeed" destination="n7N-Oh-9Bc" id="hCH-fD-IxL"/>
-                <outlet property="title" destination="IUg-Mn-ruy" id="1ns-TE-F4d"/>
-                <outlet property="voteAverage" destination="DBT-cB-5AD" id="FQY-YF-9hF"/>
+                <outlet property="movieTitle" destination="IUg-Mn-ruy" id="wxt-F9-2bV"/>
             </connections>
             <point key="canvasLocation" x="-103.05343511450381" y="-84.507042253521135"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

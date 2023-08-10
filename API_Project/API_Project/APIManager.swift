@@ -1,14 +1,15 @@
 import UIKit
 
-extension UIViewController {
+struct APIManager {
     
-    func fetch(completion: @escaping ([String]?) -> Void){
+   static func fetch(completion: @escaping
+    ([String]?,[Double]?) -> Void){
         let headers = [
             "accept": "application/json",
-            "Authorization": "Bearer \(Secrets.API_KEY)"
+            "Authorization": "\(Secrets.API_KEY)"
         ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.themoviedb.org/3/movie/popular?")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "\(Secrets.BASE_URL)/movie/popular?")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -27,14 +28,14 @@ extension UIViewController {
             print("data: \(data)")
             var result: String
             result = String(decoding: data, as: UTF8.self)
-            //print(result)
+            print(result)
             let decoder = JSONDecoder()
             let movieInfo = try? decoder.decode(MovieInfo.self, from: result.data(using: .utf8)!)
             
             DispatchQueue.main.async {
                 let titles = movieInfo?.results.map{$0.title}
-                print(titles ?? nil)
-                completion(titles)
+                let average = movieInfo?.results.map{$0.vote_average}
+                completion(titles, average)
             }
         })
         dataTask.resume()
