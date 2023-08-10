@@ -1,14 +1,14 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
+    
+    var myView = UIView()
     var ImageView = UIImageView()
     let movieTitle = UILabel()
     let voteAverage = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        
         
         let horizontalStackView = UIStackView()
         horizontalStackView.axis = .horizontal
@@ -22,10 +22,11 @@ class MovieTableViewCell: UITableViewCell {
             horizontalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             horizontalStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+
         
         ImageView.image = UIImage(systemName: "video")
         ImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        ImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        ImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         ImageView.contentMode = .scaleAspectFit
         horizontalStackView.addArrangedSubview(ImageView)
         
@@ -35,6 +36,10 @@ class MovieTableViewCell: UITableViewCell {
         horizontalStackView.addArrangedSubview(verticalStackView)
         
         movieTitle.textColor = .black
+//        movieTitle.translatesAutoresizingMaskIntoConstraints = false
+//        movieTitle.leadingAnchor.constraint(equalToSystemSpacingAfter: ImageView.safeAreaLayoutGuide.leadingAnchor, multiplier: 0).isActive = true
+//        movieTitle.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0).isActive = true
+        
         verticalStackView.addArrangedSubview(movieTitle)
         
         voteAverage.textColor = .gray

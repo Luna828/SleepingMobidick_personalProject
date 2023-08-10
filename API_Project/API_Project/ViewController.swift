@@ -2,15 +2,16 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let IMG_URL = "https://image.tmdb.org/t/p/w500/"
+    
     let logo = UIImageView()
     let searchBar = UISearchBar()
     let tableView = UITableView()
     let button = UIButton(type: .system)
-    var movieData: [(title: String, average: Double)] = []
+    var movieData: [(title: String, average: Double, posterPath: String)] = []
     
-    var totalList: [(title: String, average: Double)] = []
+    var totalList: [(title: String, average: Double, posterPath: String)] = []
 
-    
     @objc func sortButtonClicked() {
         if button.titleLabel?.text == "평점순" {
             movieData.sort{ $0.average > $1.average }
@@ -30,13 +31,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             button.setTitle("전체목록순", for: .normal)
             print(movieData)
         } else {
-            
+            movieData = totalList
             button.setTitle("평점순", for: .normal)
         }
-       
         tableView.reloadData()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             button.heightAnchor.constraint(equalToConstant: 10)
         ])
         
-        button.addTarget(self, action: #selector(sortButtonClicked), for: .touchUpInside)
+        button.addTarget(self, action: #selector(sort_prac), for: .touchUpInside)
         
         tableView.dataSource = self
         tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieCell")
@@ -84,18 +83,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
         
-        APIManager.fetch { [weak self] titles, average in
-            DispatchQueue.main.async {
-                if let titles = titles, let average = average {
-                    self?.movieData = zip(titles, average).map{($0, $1)} // 데이터 매칭 저장
-                    self?.tableView.reloadData()
+        APIManager.fetch { [weak self] (titles, average, posterPath) in
+            print("posterPath: \(posterPath!)")
+
+            DispatchQueue.main.async { [self] in
+                if let titles = titles, let average = average, let posterPath = posterPath {
+                    for index in 0..<titles.count {
+                        self?.movieData.append((titles[index], average[index], posterPath[index]))
+                        print("===========posterPath: \(posterPath[index])")
+                    }
                 }
+                self?.totalList.append(contentsOf: self?.movieData ?? [])
+                self?.tableView.reloadData()
             }
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 300
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,9 +111,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         if indexPath.row < movieData.count {
             let data = movieData[indexPath.row]
-            cell.ImageView = UIImageView(image: UIImage(systemName: "house"))
+            cell.ImageView.image = UIImage(named: "\(IMG_URL)\(data.posterPath)")
+            //cell.ImageView = UIImageView(image: UIImage(systemName: "house"))
             cell.movieTitle.text = data.title
             cell.voteAverage.text = String(data.average)
+            
+            print("111111111111\(cell.ImageView)")
         }
         return cell
     }

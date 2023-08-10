@@ -3,7 +3,7 @@ import UIKit
 struct APIManager {
     
    static func fetch(completion: @escaping
-    ([String]?,[Double]?) -> Void){
+    ([String]?,[Double]?, [String]?) -> Void){
         let headers = [
             "accept": "application/json",
             "Authorization": "\(Secrets.ACCESS_TOKEN)"
@@ -25,7 +25,7 @@ struct APIManager {
                 print("데이터를 받을 수 없습니다")
                 return
             }
-            print("data: \(data)")
+            //print("data: \(data)")
             var result: String
             result = String(decoding: data, as: UTF8.self)
             print(result)
@@ -35,7 +35,8 @@ struct APIManager {
             DispatchQueue.main.async {
                 let titles = movieInfo?.results.map{$0.title}
                 let average = movieInfo?.results.map{$0.vote_average}
-                completion(titles, average)
+                let posterPath = movieInfo?.results.map{$0.poster_path}
+                completion(titles, average, posterPath)
             }
         })
         dataTask.resume()
