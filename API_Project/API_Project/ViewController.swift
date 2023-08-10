@@ -84,13 +84,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ])
         
         APIManager.fetch { [weak self] (titles, average, posterPath) in
-            print("posterPath: \(posterPath!)")
-
+            //print("posterPath: \(posterPath!)")
             DispatchQueue.main.async { [self] in
                 if let titles = titles, let average = average, let posterPath = posterPath {
                     for index in 0..<titles.count {
                         self?.movieData.append((titles[index], average[index], posterPath[index]))
-                        print("===========posterPath: \(posterPath[index])")
+                        //print("===========posterPath: \(posterPath[index])")
                     }
                 }
                 self?.totalList.append(contentsOf: self?.movieData ?? [])
@@ -118,7 +117,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 completion(nil)
                 return
             }
-            
             let image = UIImage(data: data)
             completion(image)
         }.resume()
@@ -126,16 +124,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
+        
         if indexPath.row < movieData.count {
+            //
             let data = movieData[indexPath.row]
+            //
             downloadImage(from: "\(IMG_URL)\(data.posterPath)"){ image in
+                //
                 DispatchQueue.main.async {
                     cell.ImageView.image = image ?? UIImage(systemName: "house")
-                    //cell.ImageView = UIImageView(image: UIImage(systemName: "house"))
                     cell.movieTitle.text = data.title
                     cell.voteAverage.text = String(data.average)
                 }
-                
             }
         }
         return cell
