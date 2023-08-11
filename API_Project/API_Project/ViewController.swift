@@ -2,6 +2,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let apiManager = APIManager()
     let IMG_URL = "https://image.tmdb.org/t/p/w500"
     
     let logo = UIImageView()
@@ -39,6 +40,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        apiManager.forUnderStandCompletion { dog in
+//            print(dog)
+//        }
+        
+        apiManager.forUnderStandCompletion2 { val in
+           print("1.\(val)")
+        } completionHandler2: { val in
+            print("2.\(val)")
+        }
+
         
         view.addSubview(logo)
         view.addSubview(searchBar)
@@ -83,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
         
-        APIManager.fetch { [weak self] (titles, average, posterPath) in
+        apiManager.fetch { [weak self] (titles, average, posterPath) in
             //print("posterPath: \(posterPath!)")
             DispatchQueue.main.async { [self] in
                 if let titles = titles, let average = average, let posterPath = posterPath {
@@ -106,22 +117,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return movieData.count
     }
     
-    func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: urlString) else {
-            completion(nil)
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                completion(nil)
-                return
-            }
-            let image = UIImage(data: data)
-            completion(image)
-        }.resume()
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         
@@ -129,7 +124,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //
             let data = movieData[indexPath.row]
             //
-            downloadImage(from: "\(IMG_URL)\(data.posterPath)"){ image in
+            apiManager.downloadImage(from: "\(IMG_URL)\(data.posterPath)"){ image in
                 //
                 DispatchQueue.main.async {
                     cell.ImageView.image = image ?? UIImage(systemName: "house")
