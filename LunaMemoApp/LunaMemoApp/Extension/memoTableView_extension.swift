@@ -48,17 +48,26 @@ extension MemoTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         memoTableView.register(UINib(nibName: "MemoCell", bundle: nil), forCellReuseIdentifier: "MemoCell")
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath) as! MemoCell
         
-        let memo = DataManager.shared.memoList[indexPath.row]
+        if indexPath.section == 0 {
+            
+            let memo = DataManager.shared.memoList[indexPath.row]
+            
+            cell.memoTitle?.text = memo.content
+            cell.memoDate.text = dateFormatter.string(for: memo
+                .date)
+            
+            return cell
+        } else {
+            let memo = importantMemo[indexPath.row]
+            
+            cell.memoTitle?.text = memo.content
+            cell.memoDate.text = dateFormatter.string(from: memo.date ?? Date())
+            
+            return cell
+        }
         
-        cell.memoTitle?.text = memo.content
-        cell.memoDate.text = dateFormatter.string(for: memo
-            .date)
-        
-        return cell
     }
 }

@@ -38,7 +38,7 @@ class DataManager {
     
     func searchMemo(keyword: String) -> [Memo] {
         let request: NSFetchRequest<Memo> = Memo.fetchRequest()
-
+        
         let predicate = NSPredicate(format: "content CONTAINS[cd] %@", keyword)
         request.predicate = predicate
         
@@ -73,17 +73,24 @@ class DataManager {
         }
     }
     
+//    func moveToImportantMemo(memo: Memo?){
+//        if let memo = memo {
+//            importantMemoList.append(memo)  // 중요한 메모 목록에 메모 추가
+//            saveContext()
+//        }
+//    }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "LunaMemo")
         container.loadPersistentStores(completionHandler: {
-         (storeDescription, error) in
+            (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved Error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
-
+    
     func saveContext(){
         let context = persistentContainer.viewContext
         if context.hasChanges {

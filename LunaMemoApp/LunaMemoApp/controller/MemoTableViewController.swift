@@ -13,7 +13,7 @@ class MemoTableViewController: UITableViewController {
     var index = 0
     let dateFormatter = DateFormat().formatter
     let sections = ["iCloud","중요한 메모"]
-    var importantMemo: [String] = []
+    var importantMemo: [Memo] = []
     var token: NSObjectProtocol?
     deinit {
         if let token = token {
