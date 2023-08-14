@@ -82,18 +82,16 @@ struct APIManager {
          completion 클로저는 타입이 String을 반환하고 이 함수는 void 형태이다.
          다른 곳에서 이 함수가 실행될 때
          
-        apiManager.forUnderStandCompletion { val in
+         apiManager.forUnderStandCompletion { val in
          print("1.\(val)") // 땡글
-        } completionHandler2: { val in
-          print("2.\(val)") // 부우
-        }
+         } completionHandler2: { val in
+         print("2.\(val)") // 부우
+         }
          
          참고로 completion 클로저는 몇개를 넣어도 상관없음!
          */
         completionHandler(dog)
         completionHandler2(cat)
     }
-    
-    
 }
 
