@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -43,6 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        apiManager.forUnderStandCompletion { dog in
 //            print(dog)
 //        }
+    
         
         apiManager.forUnderStandCompletion2 { val in
            print("1.\(val)")

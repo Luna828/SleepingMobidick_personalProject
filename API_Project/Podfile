@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+pod 'Alamofire'
+pod 'Kingfisher'
+# platform :ios, '9.0'
+
+target 'API_Project' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for API_Project
+
+end
